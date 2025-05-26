@@ -3,4 +3,12 @@
   <groupId>jsp.projects</groupId>
   <artifactId>springcore</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>6.2.3</version>
+</dependency>
+  </dependencies>
 </project>
