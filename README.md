@@ -32,20 +32,44 @@ Whether you're preparing for interviews, building enterprise-grade applications,
 # 📁 Repository Structure
 
 ```
-SpringCrate/
+SpringCore/
+│
+├── springxmlbasedapp/
+│   └── Creating spring application using XML based configuration.
 │
 ├── user-management-app/
-│   └── CRUD operations with Spring Boot, MVC, JPA
+│   └── CRUD operations with Spring Boot, MVC, JPA.
 │
 ├── spring-security-auth/
-│   └── JWT-based Authentication & Authorization
+│   └── JWT-based Authentication & Authorization.
 │
 ├── product-catalog-api/
-│   └── RESTful API with custom exception handling and validation
+│   └── RESTful API with custom exception handling and validation.
 │
 ├── todo-manager/
-│   └── A simple task manager app with Thymeleaf frontend
+│   └── A simple task manager app with Thymeleaf frontend.
+│
+├── etc...
 │
 ├── README.md
 ```
+Each project includes detailed documentation, instructions, and sample data where necessary.
+<br><br>
+
+# 🚀 Features
+
+- ✅ Well-structured and modular code.
+
+- 🔄 Real-world use cases with complete CRUD functionality.
+
+- 🧩 Follows best practices of Spring ecosystem.
+
+- 🛡️ Includes projects with authentication and security layers.
+
+- 📊 Uses SQL databases with proper schema design.
+
+- 📂 Organized into independent mini-projects for focused learning.
+<br><br>
+
+
 
