@@ -11,6 +11,8 @@ Whether you're preparing for interviews, building enterprise-grade applications,
 # 🔧 Technologies Used
 
 - ☕ Java
+  
+- 🛩 Spring Core
 
 - 🌱 Spring Boot
 
@@ -71,5 +73,39 @@ Each project includes detailed documentation, instructions, and sample data wher
 - 📂 Organized into independent mini-projects for focused learning.
 <br><br>
 
+# 📚 Getting Started
 
+<b> 1.  Clone the repository:</b>
+```
+git clone https://github.com/your-username/SpringCrate.git
+cd SpringCrate
+```
+<b> 2.  Choose a project folder and import it in your IDE (IntelliJ / Eclipse).</b>
+
+<b>3.  Configure the database connection in application.properties or application.yml.</b>
+
+<b>4.  Build and run: </b>
+```
+./mvnw spring-boot:run
+```
+<br>
+
+# 🎯 Use Cases
+
+- Spring Boot interview preparation.
+
+- Backend development practice.
+
+- REST API design and implementation.
+
+- Authentication and authorization using Spring Security.
+
+- Learning Spring Data JPA with real-world examples.
+<br><br>
+
+# 🙌 Contributions
+Contributions, suggestions, and improvements are welcome!<br>
+Feel free to fork this repository, create a new project, or enhance the existing ones.
+
+<b>📬 If you found this helpful, don’t forget to ⭐️ star the repo and share it with fellow developers!</b>
 
