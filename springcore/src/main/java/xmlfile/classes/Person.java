@@ -1,9 +1,10 @@
 package xmlfile.classes;
 
 public class Person {
-	String name = "Raju";//hard-coding, giving name manually
+	
+	Mobiles mobile;
 	
 	public void walk() {
-		System.out.println(name+ " can Walk...!");
+		System.out.println("Person can Walk...!");
 	}
 }
