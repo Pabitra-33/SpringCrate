@@ -5,6 +5,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Truck {
 	
+	
+	@SuppressWarnings("unused")
 	private String tname = "TATA";
 	
 	public void start() {
