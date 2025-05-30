@@ -10,7 +10,7 @@ public class DriverTest {
 	public static void main(String[] args) {
 		
 		ApplicationContext context =  new AnnotationConfigApplicationContext(MyConfig.class);
-		Person p1 = (Person)context.getBean("person");
+		Person p1 = (Person)context.getBean(Person.class);
 		p1.calling();
 	}
 }
