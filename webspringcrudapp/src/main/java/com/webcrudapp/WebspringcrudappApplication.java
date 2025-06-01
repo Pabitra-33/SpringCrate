@@ -9,5 +9,4 @@ public class WebspringcrudappApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WebspringcrudappApplication.class, args);
 	}
-
 }
