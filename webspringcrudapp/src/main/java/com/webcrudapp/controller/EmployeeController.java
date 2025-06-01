@@ -1,6 +1,9 @@
 package com.webcrudapp.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,5 +24,11 @@ public class EmployeeController {
 		//calling the JPA interface save method to save data
 		employeeRepository.save(employee);
 		return "Data Saved...";
+	}
+	
+	
+	@GetMapping("/getall")
+	public List<Employee> getAll(){
+		return employeeRepository.findAll();
 	}
 }
