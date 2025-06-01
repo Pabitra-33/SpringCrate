@@ -17,13 +17,13 @@ import com.webcrudapp.repository.EmployeeRepository;
 public class EmployeeController { 
 	
 	@Autowired
-	private EmployeeRepository employeeRepository;
+	private EmployeeRepository employeeRepository; //automatic dependency injection
 	
 	@PostMapping("/save")
 	public String savedata(@RequestBody Employee employee) {
 		//calling the JPA interface save method to save data
 		employeeRepository.save(employee);
-		return "Data Saved...";
+		return "Data Saved Successfully!";
 	}
 	
 	
