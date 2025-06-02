@@ -2,7 +2,9 @@ package com.webcrudapp.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,7 +36,8 @@ public class EmployeeController {
 	}
 	
 	
-	@PutMapping("/update") //while updating full object we need to go for put-mapping
+	//while updating full object we need to go for put-mapping
+	@PutMapping("/update") 
 	public String update(@RequestBody Employee emp) {
 		int id = emp.getId();//get the id
 		Employee existingEmp = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Student with Id "+id+" not found"));
@@ -42,4 +45,21 @@ public class EmployeeController {
 		employeeRepository.save(emp);
 		return "Data updated";
 	}
+	
+	
+	@DeleteMapping("/deletebyid/{id}")
+	public String deleteData(@PathVariable int id) {
+		
+		boolean flag = employeeRepository.existsById(id);
+		if(flag) {
+			employeeRepository.deleteById(id);
+			return "Employee Data deleted";
+		}
+		else {
+			return "Id not found";
+		}
+	}
+	
+	
+	
 }
