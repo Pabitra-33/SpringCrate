@@ -40,7 +40,7 @@ public class EmployeeController {
 	@PutMapping("/update") 
 	public String update(@RequestBody Employee emp) {
 		int id = emp.getId();//get the id
-		Employee existingEmp = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Student with Id "+id+" not found"));
+		Employee existingEmp = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with Id "+id+" not found"));
 		System.out.println(existingEmp);
 		employeeRepository.save(emp);
 		return "Data updated";
@@ -62,4 +62,11 @@ public class EmployeeController {
 	
 	
 	
+	@GetMapping("/getbyid/{id}")
+	public Employee getById(@PathVariable int id) {
+		
+		Employee opt = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with Id "+id+" not found"));
+		System.out.println(opt);
+		return opt;
+	}
 }
