@@ -1,8 +1,6 @@
 package com.webcrudapp.controller;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,13 +34,12 @@ public class EmployeeController {
 	}
 	
 	
-	@PutMapping("/update") //while updating full object we need to go for putmapping
+	@PutMapping("/update") //while updating full object we need to go for put-mapping
 	public String update(@RequestBody Employee emp) {
 		int id = emp.getId();//get the id
-		Optional<Employee> optional = employeeRepository.findById(id);
-		Employee e1 = optional.get();
-		System.out.println(e1);
+		Employee existingEmp = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Student with Id "+id+" not found"));
+		System.out.println(existingEmp);
 		employeeRepository.save(emp);
-		return "data updated";
+		return "Data updated";
 	}
 }
