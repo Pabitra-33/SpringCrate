@@ -66,7 +66,7 @@ public class EmployeeController {
 	public Employee getById(@PathVariable int id) {
 		
 		Employee opt = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with Id "+id+" not found"));
-		System.out.println(opt);
+		System.out.println(opt);//not needed
 		return opt;
 	}
 }
