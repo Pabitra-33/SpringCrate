@@ -19,4 +19,8 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 	
 	@Query("FROM Employee where name=:name")
 	public List<Employee> getAllByName(String name);
+	
+	
+	@Query("FROM Employee where code=:code AND name=:name")
+	public List<Employee> getAllByCodeAndName(int code, String name);
 }
