@@ -72,7 +72,7 @@ public class EmployeeController {
 	
 	//creating our own custom methods
 	
-	@GetMapping("/getallbycode/{code}")
+	@GetMapping("/getallbycode")
 	public List<Employee> getallByCode(@RequestParam int code){
 		
 		return employeeRepository.getAllByCode(code);
