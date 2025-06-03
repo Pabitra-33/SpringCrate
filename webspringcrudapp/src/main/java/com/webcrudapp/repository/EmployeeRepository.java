@@ -17,4 +17,5 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 	public List<Employee> getAllByCode(int code);
 	
 	
+	//public List<Employee> getAllByName(String name);
 }
