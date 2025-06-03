@@ -78,4 +78,11 @@ public class EmployeeController {
 		return employeeRepository.getAllByCode(code);
 	}
 	
+	
+	
+	@GetMapping("/getallbyname")
+	public List<Employee> getallByName(@RequestParam String name){
+		
+		return employeeRepository.getAllByName(name);
+	}
 }
