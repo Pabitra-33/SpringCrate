@@ -91,4 +91,11 @@ public class EmployeeController {
 		
 		return employeeRepository.getAllByCodeAndName(code, name);
 	}
+	
+	
+	@GetMapping("/getallbygreaterthancode")
+	public List<Employee> getallByGreaterThanCode(@RequestParam int code){
+		
+		return employeeRepository.getAllByGreaterThanCode(code);
+	}
 }

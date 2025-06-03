@@ -23,4 +23,8 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 	
 	@Query("FROM Employee where code=:code AND name=:name")
 	public List<Employee> getAllByCodeAndName(int code, String name);
+	
+	
+	@Query("FROM Employee where code>:code")
+	public List<Employee> getAllByGreaterThanCode(int code);
 }
