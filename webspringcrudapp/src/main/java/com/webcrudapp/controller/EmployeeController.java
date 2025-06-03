@@ -79,10 +79,16 @@ public class EmployeeController {
 	}
 	
 	
-	
 	@GetMapping("/getallbyname")
 	public List<Employee> getallByName(@RequestParam String name){
 		
 		return employeeRepository.getAllByName(name);
+	}
+	
+	
+	@GetMapping("/getallbycodename")
+	public List<Employee> getallByCodeAndName(@RequestParam int code, @RequestParam String name){
+		
+		return employeeRepository.getAllByCodeAndName(code, name);
 	}
 }
