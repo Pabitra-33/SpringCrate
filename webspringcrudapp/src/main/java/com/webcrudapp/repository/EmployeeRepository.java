@@ -13,9 +13,10 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 
 	//creation of own custom method
 	
-	@Query("FROM Employee where code=:code")
+	@Query("FROM Employee where code=:code") //using named query parameter we are writing dynamic query
 	public List<Employee> getAllByCode(int code);
 	
 	
-	//public List<Employee> getAllByName(String name);
+	@Query("FROM Employee where name=:name")
+	public List<Employee> getAllByName(String name);
 }
