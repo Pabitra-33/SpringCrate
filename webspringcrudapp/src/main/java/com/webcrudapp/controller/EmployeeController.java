@@ -36,6 +36,14 @@ public class EmployeeController {
 	}
 	
 	
+	@GetMapping("/getbyid/{id}")
+	public Employee getById(@PathVariable int id) {
+		
+		Employee emp = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with Id "+id+" not found"));
+		return emp;
+	}
+	
+	
 	//while updating full object we need to go for put-mapping
 	@PutMapping("/update") 
 	public String update(@RequestBody Employee emp) {
@@ -62,11 +70,5 @@ public class EmployeeController {
 	
 	
 	
-	@GetMapping("/getbyid/{id}")
-	public Employee getById(@PathVariable int id) {
-		
-		Employee opt = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with Id "+id+" not found"));
-		System.out.println(opt);//not needed
-		return opt;
-	}
+	
 }
