@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.webcrudapp.entity.Employee;
@@ -69,6 +70,12 @@ public class EmployeeController {
 	}
 	
 	
+	//creating our own custom methods
 	
+	@GetMapping("/getallbycode/{code}")
+	public List<Employee> getallByCode(@RequestParam int code){
+		
+		return employeeRepository.getAllByCode(code);
+	}
 	
 }
