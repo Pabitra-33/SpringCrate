@@ -16,14 +16,16 @@ public class EmployeeServiceImplementation implements EmployeeService {
 
 	@Override
 	public Employee save(Employee employee) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public Employee update(Employee employee) {
-		// TODO Auto-generated method stub
-		return null;
+		int id = employee.getId();
+		Employee emp = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with Id "+id+" not found"));
+		employeeRepository.save(employee);
+		return emp;
 	}
 
 	@Override
@@ -35,6 +37,12 @@ public class EmployeeServiceImplementation implements EmployeeService {
 	@Override
 	public Employee deleteById(int id) {
 		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee getById(int id) {
+		
 		return null;
 	}
 }
