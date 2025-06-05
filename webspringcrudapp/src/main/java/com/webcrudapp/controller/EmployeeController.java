@@ -14,33 +14,38 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.webcrudapp.entity.Employee;
 import com.webcrudapp.repository.EmployeeRepository;
+import com.webcrudapp.service.EmployeeService;
 
 @RestController
 @RequestMapping("/api/employee") //base end-point or url
 public class EmployeeController {
 	
 	@Autowired
-	private EmployeeRepository employeeRepository;
+	private EmployeeService employeeService;
 
 	
 	@PostMapping("/save")
 	public String savedata(@RequestBody Employee employee) {
 		//calling the JPA interface save method to save data
-		employeeRepository.save(employee);
-		return "Data Saved Successfully!";
+		Employee s1 = employeeService.save(employee);
+		if(s1 != null) {
+			return "Data Saved Successfully!";
+		}
+		else {
+			return "Data not Saved!";
+		}
 	}
 	
 	
 	@GetMapping("/getall")
 	public List<Employee> getAll(){
-		return employeeRepository.findAll();
+		return employeeService.getAll();
 	}
 	
 	
 	@GetMapping("/getbyid/{id}")
 	public Employee getById(@PathVariable int id) {
-		
-		Employee emp = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with Id "+id+" not found"));
+		Employee emp = employeeService.getById(id);
 		return emp;
 	}
 	
@@ -48,25 +53,20 @@ public class EmployeeController {
 	//while updating full object we need to go for put-mapping
 	@PutMapping("/update") 
 	public String update(@RequestBody Employee emp) {
-		int id = emp.getId();//get the id
-		Employee existingEmp = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with Id "+id+" not found"));
-		System.out.println(existingEmp);
-		employeeRepository.save(emp);
-		return "Data updated";
+		Employee em = employeeService.update(emp);
+		if(em != null) {
+			return "Data updated";
+		}
+		else {
+			return "Data not updated";
+		}
 	}
 	
 	
 	@DeleteMapping("/deletebyid/{id}")
 	public String deleteData(@PathVariable int id) {
 		
-		boolean flag = employeeRepository.existsById(id);
-		if(flag) {
-			employeeRepository.deleteById(id);
-			return "Employee Data deleted";
-		}
-		else {
-			return "Id not found";
-		}
+		return null;
 	}
 	
 	
@@ -74,28 +74,29 @@ public class EmployeeController {
 	
 	@GetMapping("/getallbycode")
 	public List<Employee> getallByCode(@RequestParam int code){
+		return null;
 		
-		return employeeRepository.getAllByCode(code);
+		
 	}
 	
 	
 	@GetMapping("/getallbyname")
 	public List<Employee> getallByName(@RequestParam String name){
 		
-		return employeeRepository.getAllByName(name);
+		return null;
 	}
 	
 	
 	@GetMapping("/getallbycodename")
 	public List<Employee> getallByCodeAndName(@RequestParam int code, @RequestParam String name){
 		
-		return employeeRepository.getAllByCodeAndName(code, name);
+		return null;
 	}
 	
 	
 	@GetMapping("/getallbygreaterthancode")
 	public List<Employee> getallByGreaterThanCode(@RequestParam int code){
 		
-		return employeeRepository.getAllByGreaterThanCode(code);
+		return null;
 	}
 }
