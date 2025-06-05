@@ -12,7 +12,7 @@ public interface EmployeeService {
 	
 	public Employee update(Employee employee);//to update data
 	
-	public List<Employee> getAll();
+	public List<Employee> getAll();//to get the data
 	
-	public Employee deleteById(int id);
+	public Employee deleteById(int id);//to delete the data
 }
