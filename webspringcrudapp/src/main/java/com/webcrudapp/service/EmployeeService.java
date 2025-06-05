@@ -8,13 +8,13 @@ public interface EmployeeService {
 
 	//creating abstract methods
 	
-	public Employee save(Employee employee);//to save data
+	public Employee saveEmployee(Employee employee);//to save data
 	
-	public Employee update(Employee employee);//to update data
+	public Employee updateEmployee(Employee employee);//to update data
 	
-	public List<Employee> getAll();//to get the data
+	public List<Employee> getAllEmployee();//to get the data
 	
-	public Employee deleteById(int id);//to delete the data
+	public Employee deleteEmployeeById(int id);//to delete the data
 
-	public Employee getById(int id);//to find a data by id
+	public Employee getEmployeeById(int id);//to find a data by id
 }
