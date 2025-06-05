@@ -14,35 +14,40 @@ public class EmployeeServiceImplementation implements EmployeeService {
 	@Autowired
 	private EmployeeRepository employeeRepository;
 
+	
 	@Override
-	public Employee save(Employee employee) {
+	public Employee saveEmployee(Employee employee) {
 		
 		return null;
 	}
 
+	
 	@Override
-	public Employee update(Employee employee) {
+	public Employee updateEmployee(Employee employee) {
 		int id = employee.getId();
 		Employee emp = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with Id "+id+" not found"));
 		employeeRepository.save(employee);
 		return emp;
 	}
 
+	
 	@Override
-	public List<Employee> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Employee> getAllEmployee() {
+		return employeeRepository.findAll();
 	}
 
+	
 	@Override
-	public Employee deleteById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Employee deleteEmployeeById(int id) {
+		Employee em = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with id "+id+" not exist"));
+		employeeRepository.deleteById(id);
+		return em;
 	}
 
+	
 	@Override
-	public Employee getById(int id) {
-		
-		return null;
+	public Employee getEmployeeById(int id) {
+		Employee emp = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with Id "+id+" not found"));
+		return emp;
 	}
 }
