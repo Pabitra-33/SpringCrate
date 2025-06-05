@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.webcrudapp.entity.Employee;
-import com.webcrudapp.repository.EmployeeRepository;
 import com.webcrudapp.service.EmployeeService;
 
 @RestController
@@ -27,7 +26,7 @@ public class EmployeeController {
 	@PostMapping("/save")
 	public String savedata(@RequestBody Employee employee) {
 		//calling the JPA interface save method to save data
-		Employee s1 = employeeService.save(employee);
+		Employee s1 = employeeService.saveEmployee(employee);
 		if(s1 != null) {
 			return "Data Saved Successfully!";
 		}
@@ -39,13 +38,13 @@ public class EmployeeController {
 	
 	@GetMapping("/getall")
 	public List<Employee> getAll(){
-		return employeeService.getAll();
+		return employeeService.getAllEmployee();
 	}
 	
 	
 	@GetMapping("/getbyid/{id}")
 	public Employee getById(@PathVariable int id) {
-		Employee emp = employeeService.getById(id);
+		Employee emp = employeeService.getEmployeeById(id);
 		return emp;
 	}
 	
@@ -53,7 +52,7 @@ public class EmployeeController {
 	//while updating full object we need to go for put-mapping
 	@PutMapping("/update") 
 	public String update(@RequestBody Employee emp) {
-		Employee em = employeeService.update(emp);
+		Employee em = employeeService.updateEmployee(emp);
 		if(em != null) {
 			return "Data updated";
 		}
@@ -65,8 +64,13 @@ public class EmployeeController {
 	
 	@DeleteMapping("/deletebyid/{id}")
 	public String deleteData(@PathVariable int id) {
-		
-		return null;
+		Employee emp = employeeService.deleteEmployeeById(id);
+		if(emp != null) {
+			return "Employee data deleted";
+		}
+		else {
+			return "Data not deleted!!!";
+		}
 	}
 	
 	
