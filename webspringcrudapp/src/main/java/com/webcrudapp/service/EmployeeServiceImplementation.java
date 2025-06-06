@@ -50,4 +50,12 @@ public class EmployeeServiceImplementation implements EmployeeService {
 		Employee emp = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with Id "+id+" not found"));
 		return emp;
 	}
+
+
+	@Override
+	public List<Employee> getAllByCode(int code) {
+		return employeeRepository.getAllByCode(code);
+	}
+	
+	
 }
