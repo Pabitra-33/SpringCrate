@@ -6,13 +6,12 @@ import com.webcrudapp.entity.Employee;
 
 public interface EmployeeService {
 
-	//creating abstract methods
-	
+	//creating CRUD abstract methods
 	public Employee saveEmployee(Employee employee);//to save data
 	
 	public Employee updateEmployee(Employee employee);//to update data
 	
-	public List<Employee> getAllEmployee();//to get the data
+	public List<Employee> getAllEmployee();//to get the data of all employees
 	
 	public Employee deleteEmployeeById(int id);//to delete the data
 
