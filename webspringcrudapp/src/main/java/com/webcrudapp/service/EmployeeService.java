@@ -16,4 +16,6 @@ public interface EmployeeService {
 	public Employee deleteEmployeeById(int id);//to delete the data
 
 	public Employee getEmployeeById(int id);//to find a data by id
+	
+	public List<Employee> getAllByCode(int code);//finding the employees based on the code
 }
