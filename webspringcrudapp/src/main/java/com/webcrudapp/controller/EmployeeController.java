@@ -78,9 +78,7 @@ public class EmployeeController {
 	
 	@GetMapping("/getallbycode")
 	public List<Employee> getallByCode(@RequestParam int code){
-		return null;
-		
-		
+		return employeeService.getAllByCode(code);
 	}
 	
 	
