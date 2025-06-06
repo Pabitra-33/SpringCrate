@@ -17,5 +17,7 @@ public interface EmployeeService {
 
 	public Employee getEmployeeById(int id);//to find a data by id
 	
-	public List<Employee> getAllByCode(int code);//finding the employees based on the code
+	public List<Employee> getAllEmployeeByCode(int code);//finding the employees based on the code
+
+	public List<Employee> getAllEmployeeByName(String name);//finding the employees by name
 }
