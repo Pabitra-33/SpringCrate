@@ -27,4 +27,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 	
 	@Query("FROM Employee where code>:code")
 	public List<Employee> getAllByGreaterThanCode(int code);
+	
+	@Query("FROM Employee where code<:code")
+	public List<Employee> getAllByLesserThanCode(int code);
 }
