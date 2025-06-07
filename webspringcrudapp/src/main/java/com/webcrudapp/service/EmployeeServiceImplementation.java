@@ -62,6 +62,12 @@ public class EmployeeServiceImplementation implements EmployeeService {
 	public List<Employee> getAllEmployeeByName(String name) {
 		return employeeRepository.getAllByName(name);
 	}
+
+
+	@Override
+	public List<Employee> getByCodeAndName(int code, String name) {
+		return employeeRepository.getAllByCodeAndName(code, name);
+	}
 	
 	
 }
