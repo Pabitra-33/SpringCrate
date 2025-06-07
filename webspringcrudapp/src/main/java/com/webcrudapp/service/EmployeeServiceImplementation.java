@@ -68,6 +68,16 @@ public class EmployeeServiceImplementation implements EmployeeService {
 	public List<Employee> getByCodeAndName(int code, String name) {
 		return employeeRepository.getAllByCodeAndName(code, name);
 	}
-	
-	
+
+
+	@Override
+	public List<Employee> getAllByGreaterThanCode(int code) {
+		return employeeRepository.getAllByGreaterThanCode(code);
+	}
+
+
+	@Override
+	public List<Employee> getAllByLesserThanCode(int code) {
+		return employeeRepository.getAllByLesserThanCode(code);
+	}
 }
