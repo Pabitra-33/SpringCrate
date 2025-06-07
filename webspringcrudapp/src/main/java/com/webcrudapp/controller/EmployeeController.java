@@ -96,7 +96,11 @@ public class EmployeeController {
 	
 	@GetMapping("/getallbygreaterthancode")
 	public List<Employee> getallByGreaterThanCode(@RequestParam int code){
-		
-		return null;
+		return employeeService.getAllByGreaterThanCode(code);
+	}
+	
+	@GetMapping("/getallbylesserthancode")
+	public List<Employee> getallByLesserThanCode(@RequestParam int code){
+		return employeeService.getAllByLesserThanCode(code);
 	}
 }
