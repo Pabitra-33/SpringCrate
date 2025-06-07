@@ -20,4 +20,6 @@ public interface EmployeeService {
 	public List<Employee> getAllEmployeeByCode(int code);//finding the employees based on the code
 
 	public List<Employee> getAllEmployeeByName(String name);//finding the employees by name
+	
+	public List<Employee> getByCodeAndName(int code, String name);
 }
