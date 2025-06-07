@@ -22,4 +22,8 @@ public interface EmployeeService {
 	public List<Employee> getAllEmployeeByName(String name);//finding the employees by name
 	
 	public List<Employee> getByCodeAndName(int code, String name);
+	
+	public List<Employee> getAllByGreaterThanCode(int code);
+	
+	public List<Employee> getAllByLesserThanCode(int code);
 }
