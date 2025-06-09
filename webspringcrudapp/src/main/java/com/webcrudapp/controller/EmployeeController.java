@@ -25,7 +25,7 @@ public class EmployeeController {
 	
 	@PostMapping("/save")
 	public String savedata(@RequestBody Employee employee) {
-		//calling the JPA interface save method to save data
+		//calling the Service interface save method to save data
 		Employee s1 = employeeService.saveEmployee(employee);
 		if(s1 != null) {
 			return "Data Saved Successfully!";
