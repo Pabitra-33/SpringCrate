@@ -17,14 +17,15 @@ public class EmployeeServiceImplementation implements EmployeeService {
 	
 	@Override
 	public Employee saveEmployee(Employee employee) {
-		
-		return null;
+		Employee emp = employeeRepository.save(employee);
+		return emp;
 	}
 
 	
 	@Override
 	public Employee updateEmployee(Employee employee) {
 		int id = employee.getId();
+		//finding and also handling exception
 		Employee emp = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with Id "+id+" not found"));
 		employeeRepository.save(employee);
 		return emp;
