@@ -26,4 +26,6 @@ public interface EmployeeService {
 	public List<Employee> getAllByGreaterThanCode(int code);
 	
 	public List<Employee> getAllByLesserThanCode(int code);
+	
+	public List<Employee> getAllByBetweenCode(int code1, int code2);
 }
