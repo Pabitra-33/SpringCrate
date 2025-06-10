@@ -81,4 +81,10 @@ public class EmployeeServiceImplementation implements EmployeeService {
 	public List<Employee> getAllByLesserThanCode(int code) {
 		return employeeRepository.getAllByLesserThanCode(code);
 	}
+
+
+	@Override
+	public List<Employee> getAllByBetweenCode(int code1, int code2) {
+		return employeeRepository.getAllWhereCodeeBetween(code1, code2);
+	}
 }
