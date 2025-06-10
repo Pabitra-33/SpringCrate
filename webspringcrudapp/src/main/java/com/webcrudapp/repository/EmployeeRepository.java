@@ -30,4 +30,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 	
 	@Query("FROM Employee where code<:code")
 	public List<Employee> getAllByLesserThanCode(int code);
+	
+	@Query("from Employee where code between :code1 And :code2")
+    List<Employee> getAllWhereCodeeBetween(int code1, int code2);
 }
