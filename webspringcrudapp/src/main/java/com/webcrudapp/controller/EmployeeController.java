@@ -99,8 +99,15 @@ public class EmployeeController {
 		return employeeService.getAllByGreaterThanCode(code);
 	}
 	
+	
 	@GetMapping("/getallbylesserthancode")
 	public List<Employee> getallByLesserThanCode(@RequestParam int code){
 		return employeeService.getAllByLesserThanCode(code);
+	}
+	
+	
+	@GetMapping("/getallbybetweencode")
+	public List<Employee> getallByBetweenCode(@RequestParam int code1, @RequestParam int code2){
+		return employeeService.getAllByBetweenCode(code1, code2);
 	}
 }
