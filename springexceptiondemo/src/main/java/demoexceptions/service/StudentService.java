@@ -2,8 +2,11 @@ package demoexceptions.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import demoexceptions.entity.Student;
 
+@Service
 public interface StudentService {
 
 	//created some abstract methods to achieve abstraction
