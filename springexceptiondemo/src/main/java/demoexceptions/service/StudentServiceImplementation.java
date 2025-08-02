@@ -21,20 +21,26 @@ public  class StudentServiceImplementation implements  StudentService {
 
 	@Override
 	public Student updateStudent(Student student) {
-		// TODO Auto-generated method stub
-		return null;
+		int id = student.getId();
+		boolean stud = studentRepository.existsById(id);
+		if(stud) {
+			return studentRepository.save(student);
+		}
+		else {
+			return student;
+		}
 	}
 
 	@Override
 	public List<Student> getStudents() {
-		// TODO Auto-generated method stub
-		return null;
+		return studentRepository.findAll();
 	}
 
 	@Override
 	public void removeStudent(int id) {
-		// TODO Auto-generated method stub
-		
+		boolean res = studentRepository.existsById(id);
+		if(res) {
+			studentRepository.deleteById(id);
+		}
 	}
-
 }
