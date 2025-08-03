@@ -17,7 +17,7 @@ public class StudentController {
 	
 	@PostMapping("/save") //will trigger for the "/students/save" URL
 	public Student saveStudent(Student student) {
-		return null;
+		return studentService.saveStudent(student);
 	}
 	
 }
