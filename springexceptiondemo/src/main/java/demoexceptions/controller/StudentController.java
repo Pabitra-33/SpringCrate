@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import demoexceptions.entity.Student;
-import demoexceptions.exceptionhandling.ApplicationExceptionHandler;
-import demoexceptions.exceptionhandling.IdNotFoundException;
 import demoexceptions.exceptionhandling.StudentNotFoundException;
 import demoexceptions.service.StudentService;
 
@@ -25,14 +23,9 @@ import demoexceptions.service.StudentService;
 @RequestMapping("/students")
 public class StudentController {
 
-    private final ApplicationExceptionHandler applicationExceptionHandler;
-
 	@Autowired
 	private StudentService studentService;
 
-    StudentController(ApplicationExceptionHandler applicationExceptionHandler) {
-        this.applicationExceptionHandler = applicationExceptionHandler;
-    }
 	
 	//saving a new student data coming from the user.
 	
