@@ -8,7 +8,7 @@ public class ExceptionInfo {
 	private String msg;//a standard message
 	private LocalDateTime localDateTime;//show date and time
 	
-	//getters and setters
+	// getter and setter methods
 	public String getCode() {
 		return code;
 	}
