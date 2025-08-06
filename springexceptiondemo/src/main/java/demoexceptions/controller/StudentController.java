@@ -26,7 +26,7 @@ public class StudentController {
 	@Autowired
 	private StudentService studentService;
 
-	
+	//created the controller layer to interact with the fronted and interact to perform CRUD Operation.
 	//saving a new student data coming from the user.
 	
 	@PostMapping("/create") //will trigger for the "/students/save" URL
