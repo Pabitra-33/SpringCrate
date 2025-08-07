@@ -20,7 +20,7 @@ import demoexceptions.exceptionhandling.StudentNotFoundException;
 import demoexceptions.service.StudentService;
 
 @RestController
-@RequestMapping("/students")
+@RequestMapping("/students") //will trigger for this url
 public class StudentController {
 
 	@Autowired
