@@ -11,7 +11,7 @@ import com.webcrudapp.entity.Employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 
-	//creation of own custom method
+	//creation of own custom method to perform operations based on our requirement
 	
 	@Query("FROM Employee where code=:code") //using named query parameter we are writing dynamic query
 	public List<Employee> getAllByCode(int code);
