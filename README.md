@@ -22,7 +22,7 @@ Whether you're preparing for interviews, building enterprise-grade applications,
 
 - 🔐 Spring Security
 
-- 🧪 JUnit & Mockito (where applicable)
+- 🧪 JUnit & Mockito
 
 - 🗃️ MySQL / PostgreSQL
 
